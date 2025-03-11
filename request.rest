@@ -1,0 +1,101 @@
+###
+
+GET http://localhost:5001/api/rooms
+
+
+###
+POST http://localhost:5001/api/rooms
+Content-Type: application/json
+
+{
+    "name": "Test Room 6",
+    "price": 500,
+    "desc": "Some description",
+    "roomNumbers": [
+        {
+            "number": 102,
+            "unavailableDates": ["2025-03-10", "2024-03-26"]
+        }
+    ]
+}
+
+// get single room
+
+###
+GET http://localhost:5001/api/rooms/67ce3f74088758ae67f80235
+
+# update room
+###
+PUT http://localhost:5001/api/rooms/67ce3f74088758ae67f80235
+Content-Type: application/json
+
+{
+    "name": "updated name",
+    "price": 100000000
+}
+
+// delete room
+
+###
+
+DELETE  http://localhost:5001/api/rooms/67ce3f74088758ae67f80235
+
+
+
+// get bookings
+
+### 
+GET http://localhost:5000/api/bookings
+
+
+// create booking 
+
+###
+
+POST http://localhost:5000/api/bookings
+Content-Type: application/json
+
+
+{
+    "roomId": "67ce42d684cc5de3c4a25382",
+    "name": "Raghib Shah",
+    "email": "raghibahmedshah22@gmail.com",
+    "checkInDate": "2025-03-11",
+    "checkOutDate": "2025-03-12"
+}
+
+// update booking
+
+###
+PUT http://localhost:5000/api/bookings/67cf6fb01556588f051ad6fc
+Content-Type: application/json
+
+{
+    "name": "Updated Name",
+    "email": "updated@email.com"
+}
+
+
+// delete function 
+
+###
+
+DELETE  http://localhost:5000/api/bookings/67cf6fb01556588f051ad6fc
+Content-Type: application/json
+
+{
+
+    "name": "updated name",
+    "email": "updated@gmail.cpom"
+}
+
+
+// get single booking 
+
+###
+
+GET http://localhost:5000/api/bookings/67cf702051ebfb46bab65387
+
+
+
+
