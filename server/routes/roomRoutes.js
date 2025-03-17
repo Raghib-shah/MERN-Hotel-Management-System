@@ -1,4 +1,5 @@
 const {Router} = require ("express");
+const { auth } = require("../middleware/authMiddleware");
 const {
     getRooms,
     createRoom,
@@ -15,7 +16,7 @@ router.get("/", getRooms);
 
 //create room 
 
-router.post("/", createRoom);
+router.post("/", auth ,  createRoom);
 
 // get single room
 
@@ -23,9 +24,9 @@ router.get("/:id", getRoom);
 
 // update room 
 
-router.put("/:id", updateRoom);
+router.put("/:id", auth, updateRoom);
 
 // delete room 
-router.delete("/:id", deleteRoom);
+router.delete("/:id", auth, deleteRoom);
 
 module.exports = router;

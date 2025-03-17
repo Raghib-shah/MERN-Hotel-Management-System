@@ -2,9 +2,9 @@
 
 GET http://localhost:5001/api/rooms
 
-
+// create room
 ###
-POST http://localhost:5001/api/rooms
+POST http://localhost:500/api/rooms
 Content-Type: application/json
 
 {
@@ -94,8 +94,39 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:5000/api/bookings/67cf702051ebfb46bab65387
+GET http://localhost:5001/api/bookings/67cf702051ebfb46bab65387
 
 
+#get users 
+### 
+GET http://localhost:5001/api/users
 
+#create user
+### 
+POST http://localhost:5001/api/users 
+Content-Type: application/json
+
+{
+"name": "user123",
+ "email": "user123@gmail.com",
+  "password": "user123"
+}
+
+#login user 
+### 
+POST http://localhost:500/api/users/login 
+Content-Type: application/json
+
+{
+"email": "user123@gmail.com",
+ "password": "user123"
+}
+
+#logout user 
+### 
+http://localhost:500/api/users/logout
+
+#check auth
+### 
+GET http://localhost:5000/auth
 
